@@ -82,3 +82,7 @@ int main() {
 ```bash
 PKG_CONFIG_PATH=/usr/local/opt/opencv3/lib/pkgconfig clang test.cpp `pkg-config opencv --libs --cflags` -lc++
 ```
+
+# 参考資料
+
+- [C時代の enum CV_** を駆逐したい - Qiita](http://qiita.com/tomoaki_teshima/items/0bca3b8af03cc9242815)
