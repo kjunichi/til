@@ -80,7 +80,7 @@ int main() {
 ```
 
 ```bash
-PKG_CONFIG_PATH=/usr/local/opt/opencv3/lib/pkgconfig clang test.cpp `pkg-config opencv --libs --cflags` -lc++
+clang test.cpp `PKG_CONFIG_PATH=/usr/local/opt/opencv3/lib/pkgconfig pkg-config opencv --libs --cflags` -lc++
 ```
 
 # 参考資料
