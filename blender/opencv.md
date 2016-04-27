@@ -24,3 +24,10 @@ Traceback (most recent call last):
   File "<blender_console>", line 1, in <module>
 ImportError: numpy.core.multiarray failed to import
 ```
+
+```
+import cv2
+Traceback (most recent call last):
+  File "<blender_console>", line 1, in <module>
+ImportError: No module named 'cv2'
+```
