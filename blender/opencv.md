@@ -1,5 +1,10 @@
 # OpenCV on Blender
 
+```bash
+brew install python3
+brew install opencv3 --with-python3 --with-tbb --with-ffmpeg
+```
+
 ```py
 import cv2
 
