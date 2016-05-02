@@ -1,3 +1,37 @@
+# Brachistochrone curve
+
+```py
+import bpy
+import math
+
+mesh = bpy.data.meshes.new('CurveMeshByData')
+obj = bpy.data.objects.new('CurveObjectByData', mesh)
+bpy.context.scene.objects.link(obj)
+
+xmin = 0
+xmax = 3.1
+step = 100
+#vertices = [(x*((xmax-xmin)/(step-1))+xmin, math.sin((x*((xmax-xmin)/(step-1))+xmin))*y+2*y, 0.0) for x in range(0,step) for y in [0,1]]
+
+vertices = [( (x*((xmax-xmin)/(step-1))+xmin) - math.sin((x*((xmax-xmin)/(step-1))+xmin)), (1+math.cos((x*((xmax-xmin)/(step-1))+xmin)))*y+1*y, 0.0) for x in range(0,step) for y in [0,1]]
+
+faces=[]
+
+for i in range(0,step-1):
+    idx=i*2
+    face = (idx, idx+1, idx+3, idx+2)
+    faces.append(face)
+
+mesh.from_pydata(vertices, [], faces)
+mesh.update()
+bpy.context.scene.objects.active = bpy.data.objects['CurveObjectByData']
+bpy.ops.object.editmode_toggle()
+bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"mirror":False}, TRANSFORM_OT_translate={"value":(0, 0, -3), "constraint_axis":(False, False, True), "constraint_orientation":'NORMAL', "mirror":False, "proportional":'DISABLED', "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "texture_space":False, "remove_on_cancel":False, "release_confirm":False})
+
+```
+
+# test
+
 ```py
 import bpy
 import math
