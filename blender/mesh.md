@@ -1,3 +1,17 @@
+# select vertex
+
+```py
+import bpy,bmesh
+
+mesh=bmesh.from_edit_mesh(bpy.context.object.data)
+for v in mesh.verts:
+    if v.co.x >1.1:
+        v.select = True
+
+# trigger viewport update
+bpy.context.scene.objects.active = bpy.context.scene.objects.active
+```
+
 # Brachistochrone curve
 
 ```py
