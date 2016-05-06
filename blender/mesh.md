@@ -1,4 +1,4 @@
-# select vertex
+# Select verteces of mesh
 
 ```py
 import bpy,bmesh
