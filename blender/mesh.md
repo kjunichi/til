@@ -10,6 +10,8 @@ for v in mesh.verts:
 
 # trigger viewport update
 bpy.context.scene.objects.active = bpy.context.scene.objects.active
+# see https://www.blender.org/api/blender_python_api_2_77a_release/bmesh.html?highlight=bmesh#module-bmesh
+#  bmesh.update_edit_mesh(mesh, tessface=True, destructive=True)
 ```
 
 # Brachistochrone curve
