@@ -19,9 +19,14 @@ for i in bpy.data.objects:
 treeObjNames = set(afterObjNames) - set(beforeObjNames)
 
 for name in treeObjNames:
-  print("objName = " + name)
+  #print("objName = " + name)
+  if not bpy.data.objects[name].parent:
+    bpy.data.objects[name].select = True
+  else:
+    bpy.data.objects[name].select = False
 
-print(bpy.data.objects.keys())
+bpy.ops.transform.resize(value=(0.3, 0.3, 0.3), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1.0, snap=False, snap_target='CLOSEST', snap_point=(0.0, 0.0, 0.0), snap_align=False, snap_normal=(0.0, 0.0, 0.0), gpencil_strokes=False, texture_space=False, remove_on_cancel=False, release_confirm=False)
 
-for name in treeObjNames:
-  print(bpy.data.objects[name].parent)
+import os
+bpy.ops.render.render()
+bpy.data.images['Render Result'].save_render(filepath = os.environ['HOME'] + '/tree_image.png')
