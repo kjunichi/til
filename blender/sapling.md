@@ -22,6 +22,9 @@ for i in bpy.data.objects:
 newObjNames = afterObjNames - beforeObjNames
 
 for objName in newObjNames:
-  object = bpy.data.objects[objName]
-  object.select = True
+  if not bpy.data.objects[name].parent:
+    bpy.data.objects[name].select = True
+  else:
+    bpy.data.objects[name].select = False
 
+```
