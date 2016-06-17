@@ -1,3 +1,10 @@
+# express
+
+```bash
+npm install express-generator -g
+express -H webapp
+```
+
 # DB sample
 
 ```js
