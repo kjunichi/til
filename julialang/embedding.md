@@ -28,3 +28,8 @@ gcc -o test -fPIC -I/Applications/Julia-0.4.5.app/Contents/Resources/julia/inclu
 export JULIA_HOME=/Applications/Julia-0.4.5.app/Contents/Resources/julia/bin/
 ./test
 ```
+
+- /usr/local/julia/share/julia/julia-config.jl
+
+- PATH=$PATH:/Applications/Julia-0.4.5.app/Contents/Resources/julia/bin
+- /Applications/Julia-0.4.5.app/Contents/Resources/julia/share/julia/julia-config.jl 
