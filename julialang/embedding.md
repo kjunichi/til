@@ -33,3 +33,7 @@ export JULIA_HOME=/Applications/Julia-0.4.5.app/Contents/Resources/julia/bin/
 
 - PATH=$PATH:/Applications/Julia-0.4.5.app/Contents/Resources/julia/bin
 - /Applications/Julia-0.4.5.app/Contents/Resources/julia/share/julia/julia-config.jl 
+
+# Link
+
+- http://docs.julialang.org/en/release-0.4/manual/embedding/
